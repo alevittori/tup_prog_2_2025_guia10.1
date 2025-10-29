@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            tbDNI = new TextBox();
-            tbNombre = new TextBox();
-            tbDireccion = new TextBox();
             btnRecibirPaquete = new Button();
+            tbDireccion = new TextBox();
+            label1 = new Label();
+            tbNombre = new TextBox();
+            label2 = new Label();
+            tbDNI = new TextBox();
+            label3 = new Label();
             btnPrepararCamion = new Button();
             groupBox2 = new GroupBox();
-            lsbPaquetesRecibidos = new ListBox();
             label4 = new Label();
+            lsbPaquetesRecibidos = new ListBox();
             groupBox3 = new GroupBox();
+            label8 = new Label();
+            lsbPaquetesAEntregar = new ListBox();
+            btnEntragarPaquete = new Button();
+            btnIniciarReparto = new Button();
             gbEntregar = new GroupBox();
             tbDirEntrega = new TextBox();
-            label5 = new Label();
-            tbNombreEntrega = new TextBox();
             label6 = new Label();
-            tbDniEntrega = new TextBox();
+            label5 = new Label();
             label7 = new Label();
-            btnIniciarReparto = new Button();
-            btnEntragarPaquete = new Button();
-            lsbPaquetesAEntregar = new ListBox();
-            label8 = new Label();
+            tbNombreEntrega = new TextBox();
+            tbDniEntrega = new TextBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -69,10 +69,28 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(224, 285);
+            groupBox1.Size = new Size(235, 356);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Atencion al Cliente";
+            // 
+            // btnRecibirPaquete
+            // 
+            btnRecibirPaquete.Location = new Point(65, 280);
+            btnRecibirPaquete.Name = "btnRecibirPaquete";
+            btnRecibirPaquete.Size = new Size(117, 60);
+            btnRecibirPaquete.TabIndex = 1;
+            btnRecibirPaquete.Text = "Recibir Correspondencia";
+            btnRecibirPaquete.UseVisualStyleBackColor = true;
+            btnRecibirPaquete.Click += btnRecibirPaquete_Click;
+            // 
+            // tbDireccion
+            // 
+            tbDireccion.Location = new Point(88, 132);
+            tbDireccion.Multiline = true;
+            tbDireccion.Name = "tbDireccion";
+            tbDireccion.Size = new Size(130, 50);
+            tbDireccion.TabIndex = 6;
             // 
             // label1
             // 
@@ -83,6 +101,13 @@
             label1.TabIndex = 1;
             label1.Text = "DNI";
             // 
+            // tbNombre
+            // 
+            tbNombre.Location = new Point(88, 80);
+            tbNombre.Name = "tbNombre";
+            tbNombre.Size = new Size(130, 23);
+            tbNombre.TabIndex = 5;
+            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -91,6 +116,13 @@
             label2.Size = new Size(56, 15);
             label2.TabIndex = 2;
             label2.Text = "NOMBRE";
+            // 
+            // tbDNI
+            // 
+            tbDNI.Location = new Point(88, 41);
+            tbDNI.Name = "tbDNI";
+            tbDNI.Size = new Size(130, 23);
+            tbDNI.TabIndex = 4;
             // 
             // label3
             // 
@@ -101,40 +133,9 @@
             label3.TabIndex = 3;
             label3.Text = "DIRECCION";
             // 
-            // tbDNI
-            // 
-            tbDNI.Location = new Point(88, 41);
-            tbDNI.Name = "tbDNI";
-            tbDNI.Size = new Size(130, 23);
-            tbDNI.TabIndex = 4;
-            // 
-            // tbNombre
-            // 
-            tbNombre.Location = new Point(88, 80);
-            tbNombre.Name = "tbNombre";
-            tbNombre.Size = new Size(130, 23);
-            tbNombre.TabIndex = 5;
-            // 
-            // tbDireccion
-            // 
-            tbDireccion.Location = new Point(88, 132);
-            tbDireccion.Multiline = true;
-            tbDireccion.Name = "tbDireccion";
-            tbDireccion.Size = new Size(130, 50);
-            tbDireccion.TabIndex = 6;
-            // 
-            // btnRecibirPaquete
-            // 
-            btnRecibirPaquete.Location = new Point(47, 206);
-            btnRecibirPaquete.Name = "btnRecibirPaquete";
-            btnRecibirPaquete.Size = new Size(117, 60);
-            btnRecibirPaquete.TabIndex = 1;
-            btnRecibirPaquete.Text = "Recibir Correspondencia";
-            btnRecibirPaquete.UseVisualStyleBackColor = true;
-            // 
             // btnPrepararCamion
             // 
-            btnPrepararCamion.Location = new Point(62, 287);
+            btnPrepararCamion.Location = new Point(551, 287);
             btnPrepararCamion.Name = "btnPrepararCamion";
             btnPrepararCamion.Size = new Size(113, 53);
             btnPrepararCamion.TabIndex = 1;
@@ -148,19 +149,10 @@
             groupBox2.Controls.Add(lsbPaquetesRecibidos);
             groupBox2.Location = new Point(253, 12);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(244, 356);
+            groupBox2.Size = new Size(679, 356);
             groupBox2.TabIndex = 2;
             groupBox2.TabStop = false;
             groupBox2.Text = "Sector de embarque";
-            // 
-            // lsbPaquetesRecibidos
-            // 
-            lsbPaquetesRecibidos.FormattingEnabled = true;
-            lsbPaquetesRecibidos.ItemHeight = 15;
-            lsbPaquetesRecibidos.Location = new Point(6, 41);
-            lsbPaquetesRecibidos.Name = "lsbPaquetesRecibidos";
-            lsbPaquetesRecibidos.Size = new Size(225, 229);
-            lsbPaquetesRecibidos.TabIndex = 0;
             // 
             // label4
             // 
@@ -171,6 +163,15 @@
             label4.TabIndex = 7;
             label4.Text = "PAQUETES RECIBIDOS";
             // 
+            // lsbPaquetesRecibidos
+            // 
+            lsbPaquetesRecibidos.FormattingEnabled = true;
+            lsbPaquetesRecibidos.ItemHeight = 15;
+            lsbPaquetesRecibidos.Location = new Point(6, 41);
+            lsbPaquetesRecibidos.Name = "lsbPaquetesRecibidos";
+            lsbPaquetesRecibidos.Size = new Size(531, 229);
+            lsbPaquetesRecibidos.TabIndex = 0;
+            // 
             // groupBox3
             // 
             groupBox3.Controls.Add(label8);
@@ -178,12 +179,48 @@
             groupBox3.Controls.Add(btnEntragarPaquete);
             groupBox3.Controls.Add(btnIniciarReparto);
             groupBox3.Controls.Add(gbEntregar);
-            groupBox3.Location = new Point(520, 18);
+            groupBox3.Location = new Point(12, 389);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(329, 482);
+            groupBox3.Size = new Size(920, 267);
             groupBox3.TabIndex = 3;
             groupBox3.TabStop = false;
             groupBox3.Text = "TAREA DE REPARTO";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(343, 19);
+            label8.Name = "label8";
+            label8.Size = new Size(101, 15);
+            label8.TabIndex = 8;
+            label8.Text = "Listado a entregar";
+            // 
+            // lsbPaquetesAEntregar
+            // 
+            lsbPaquetesAEntregar.FormattingEnabled = true;
+            lsbPaquetesAEntregar.ItemHeight = 15;
+            lsbPaquetesAEntregar.Location = new Point(343, 43);
+            lsbPaquetesAEntregar.Name = "lsbPaquetesAEntregar";
+            lsbPaquetesAEntregar.Size = new Size(562, 214);
+            lsbPaquetesAEntregar.TabIndex = 10;
+            // 
+            // btnEntragarPaquete
+            // 
+            btnEntragarPaquete.Location = new Point(203, 182);
+            btnEntragarPaquete.Name = "btnEntragarPaquete";
+            btnEntragarPaquete.Size = new Size(113, 53);
+            btnEntragarPaquete.TabIndex = 9;
+            btnEntragarPaquete.Text = "Entregar Paquete";
+            btnEntragarPaquete.UseVisualStyleBackColor = true;
+            // 
+            // btnIniciarReparto
+            // 
+            btnIniciarReparto.Location = new Point(17, 182);
+            btnIniciarReparto.Name = "btnIniciarReparto";
+            btnIniciarReparto.Size = new Size(113, 53);
+            btnIniciarReparto.TabIndex = 8;
+            btnIniciarReparto.Text = "Iniciar Reparto";
+            btnIniciarReparto.UseVisualStyleBackColor = true;
             // 
             // gbEntregar
             // 
@@ -205,24 +242,8 @@
             tbDirEntrega.Location = new Point(99, 80);
             tbDirEntrega.Multiline = true;
             tbDirEntrega.Name = "tbDirEntrega";
-            tbDirEntrega.Size = new Size(130, 50);
+            tbDirEntrega.Size = new Size(178, 50);
             tbDirEntrega.TabIndex = 12;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(58, 27);
-            label5.Name = "label5";
-            label5.Size = new Size(27, 15);
-            label5.TabIndex = 7;
-            label5.Text = "DNI";
-            // 
-            // tbNombreEntrega
-            // 
-            tbNombreEntrega.Location = new Point(99, 51);
-            tbNombreEntrega.Name = "tbNombreEntrega";
-            tbNombreEntrega.Size = new Size(130, 23);
-            tbNombreEntrega.TabIndex = 11;
             // 
             // label6
             // 
@@ -233,12 +254,14 @@
             label6.TabIndex = 8;
             label6.Text = "NOMBRE";
             // 
-            // tbDniEntrega
+            // label5
             // 
-            tbDniEntrega.Location = new Point(99, 23);
-            tbDniEntrega.Name = "tbDniEntrega";
-            tbDniEntrega.Size = new Size(130, 23);
-            tbDniEntrega.TabIndex = 10;
+            label5.AutoSize = true;
+            label5.Location = new Point(58, 27);
+            label5.Name = "label5";
+            label5.Size = new Size(27, 15);
+            label5.TabIndex = 7;
+            label5.Text = "DNI";
             // 
             // label7
             // 
@@ -249,47 +272,25 @@
             label7.TabIndex = 9;
             label7.Text = "DIRECCION";
             // 
-            // btnIniciarReparto
+            // tbNombreEntrega
             // 
-            btnIniciarReparto.Location = new Point(17, 182);
-            btnIniciarReparto.Name = "btnIniciarReparto";
-            btnIniciarReparto.Size = new Size(113, 53);
-            btnIniciarReparto.TabIndex = 8;
-            btnIniciarReparto.Text = "Iniciar Reparto";
-            btnIniciarReparto.UseVisualStyleBackColor = true;
+            tbNombreEntrega.Location = new Point(99, 51);
+            tbNombreEntrega.Name = "tbNombreEntrega";
+            tbNombreEntrega.Size = new Size(178, 23);
+            tbNombreEntrega.TabIndex = 11;
             // 
-            // btnEntragarPaquete
+            // tbDniEntrega
             // 
-            btnEntragarPaquete.Location = new Point(203, 182);
-            btnEntragarPaquete.Name = "btnEntragarPaquete";
-            btnEntragarPaquete.Size = new Size(113, 53);
-            btnEntragarPaquete.TabIndex = 9;
-            btnEntragarPaquete.Text = "Entregar Paquete";
-            btnEntragarPaquete.UseVisualStyleBackColor = true;
-            // 
-            // lsbPaquetesAEntregar
-            // 
-            lsbPaquetesAEntregar.FormattingEnabled = true;
-            lsbPaquetesAEntregar.ItemHeight = 15;
-            lsbPaquetesAEntregar.Location = new Point(21, 281);
-            lsbPaquetesAEntregar.Name = "lsbPaquetesAEntregar";
-            lsbPaquetesAEntregar.Size = new Size(295, 169);
-            lsbPaquetesAEntregar.TabIndex = 10;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(21, 263);
-            label8.Name = "label8";
-            label8.Size = new Size(101, 15);
-            label8.TabIndex = 8;
-            label8.Text = "Listado a entregar";
+            tbDniEntrega.Location = new Point(99, 23);
+            tbDniEntrega.Name = "tbDniEntrega";
+            tbDniEntrega.Size = new Size(130, 23);
+            tbDniEntrega.TabIndex = 10;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(865, 525);
+            ClientSize = new Size(945, 721);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
