@@ -9,20 +9,20 @@ namespace Ejercicio1.Models
     internal class Repartidor
     {
         int capacidad, ocupacion;
-        Stack<Paquete> entregas;
+        Stack<Paquete> entregas = new Stack<Paquete>();
 
         public int Capacidad { get => capacidad; private set => capacidad = value; }
-        public int Ocupacion { get =>  ocupacion; private set => ocupacion = value; }
+        public int Ocupacion { get =>  entregas.Count; private set => ocupacion = value; }
     
         public Repartidor(int capacidad)
         {
             Capacidad = capacidad;
-            Ocupacion = 0;
+            
         }
 
         public bool HayEspacio()
         {
-            return (capacidad - ocupacion) > 0;
+            return (Capacidad - Ocupacion) > 0;
         }
     
         public void Cargar(Paquete paquete)
@@ -30,17 +30,21 @@ namespace Ejercicio1.Models
             if (!HayEspacio())
                 return;
             entregas.Push(paquete);
-            Ocupacion++;
+            
         }
         public Paquete Descargar()
         {
-            Ocupacion--;
-            return entregas.Pop();
+            if(entregas.Count > 0)//con esto evito que me de una excepcion de pila vacia
+                return entregas.Pop();
+            return null;
         }
 
         public Paquete Revisar()
         {
-            return entregas.Peek();
+           
+            if(entregas.Count > 0) //con esto evito que me de una excepcion de pila vacia
+                return entregas.Peek();
+            return null;
         }
     
     }

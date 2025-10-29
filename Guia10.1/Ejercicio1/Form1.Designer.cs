@@ -141,6 +141,7 @@
             btnPrepararCamion.TabIndex = 1;
             btnPrepararCamion.Text = "Preparar Camion";
             btnPrepararCamion.UseVisualStyleBackColor = true;
+            btnPrepararCamion.Click += btnPrepararCamion_Click;
             // 
             // groupBox2
             // 
@@ -159,7 +160,7 @@
             label4.AutoSize = true;
             label4.Location = new Point(6, 23);
             label4.Name = "label4";
-            label4.Size = new Size(122, 15);
+            label4.Size = new Size(123, 15);
             label4.TabIndex = 7;
             label4.Text = "PAQUETES RECIBIDOS";
             // 
@@ -212,6 +213,7 @@
             btnEntragarPaquete.TabIndex = 9;
             btnEntragarPaquete.Text = "Entregar Paquete";
             btnEntragarPaquete.UseVisualStyleBackColor = true;
+            btnEntragarPaquete.Click += btnEntragarPaquete_Click;
             // 
             // btnIniciarReparto
             // 
@@ -221,6 +223,7 @@
             btnIniciarReparto.TabIndex = 8;
             btnIniciarReparto.Text = "Iniciar Reparto";
             btnIniciarReparto.UseVisualStyleBackColor = true;
+            btnIniciarReparto.Click += btnIniciarReparto_Click;
             // 
             // gbEntregar
             // 
@@ -297,6 +300,7 @@
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "Form1";
             Text = "Despacho de Paquetes";
+            Load += Form1_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);

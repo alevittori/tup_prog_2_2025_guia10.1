@@ -11,6 +11,12 @@ namespace Ejercicio1.Models
         Queue<Paquete> depositos = new Queue<Paquete>();
         Repartidor camion;
 
+        internal Repartidor Camion { get => camion; private set => camion = value; }
+
+        public Despachador()
+        {
+            this.camion = new Repartidor(10);
+        }
         public Paquete RecibirCorrespondencia(string nombre, int dni, string direc)
         {
             Paquete correspondencia = new Paquete(dni, nombre, direc);
@@ -20,15 +26,30 @@ namespace Ejercicio1.Models
         }
         public Repartidor PrepararCamion(int capacidad)
         {
-            this.camion = new Repartidor(capacidad);
-            return camion;
+            this.Camion = new Repartidor(capacidad);
+            return Camion;
         }
-        public void CargarPaqueteAlCamion()
+        public Paquete CargarPaqueteAlCamion()
         {
-            while (camion.HayEspacio())
+            Paquete paquete = null;
+            if (Camion.HayEspacio() == true && depositos.Count > 0)
             {
-                camion.Cargar(depositos.Dequeue());
+                paquete = depositos.Dequeue();
+                Camion.Cargar(paquete);
             }
+            return paquete;
+
+            /*
+            if (!camion.HayEspacio())
+                return null;
+            if (!(depositos.Count > 0))
+                return null;
+
+            Paquete paqueteACargar = depositos.Dequeue();
+            camion.Cargar(paqueteACargar);
+            return paqueteACargar;
+            */
+            
         }
     }
 }
