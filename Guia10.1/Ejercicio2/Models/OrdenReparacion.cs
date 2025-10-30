@@ -22,5 +22,10 @@ namespace Ejercicio2.Models
             Fecha = DateTime.Now;
             Solucionado = false;
         }
+
+        public override string ToString()
+        {
+            return $"{reclamo.ToString()}";
+        }
     }
 }

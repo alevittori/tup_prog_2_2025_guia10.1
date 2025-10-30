@@ -24,8 +24,12 @@ namespace Ejercicio2.Models
         }
         public OrdenReparacion ResolverReclamo()
         {
+            //OrdenReparacion nuevaOrden;
+            //Reclamo reclamoAResolver;
+            if (reclamosPendientes.Count < 1)
+                return null;
+            
             Reclamo reclamoAResolver = reclamosPendientes.Dequeue();
-
             OrdenReparacion nuevaOrden = new OrdenReparacion(reclamoAResolver);
             trabajosPendientes.Enqueue(nuevaOrden);
             return nuevaOrden;
@@ -33,6 +37,9 @@ namespace Ejercicio2.Models
 
         public OrdenReparacion EjecutarOrdenDeTabajo()
         {
+            if (trabajosPendientes.Count < 1)
+                return null;
+
             OrdenReparacion ordenAEjecutar = trabajosPendientes.Dequeue();
             return ordenAEjecutar;
         }

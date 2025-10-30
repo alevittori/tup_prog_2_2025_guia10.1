@@ -70,6 +70,7 @@
             btnRegistrarReclamo.TabIndex = 3;
             btnRegistrarReclamo.Text = "Registrar Reclamo";
             btnRegistrarReclamo.UseVisualStyleBackColor = true;
+            btnRegistrarReclamo.Click += btnRegistrarReclamo_Click;
             // 
             // groupBox4
             // 
@@ -136,6 +137,7 @@
             btnCrearOrden.TabIndex = 4;
             btnCrearOrden.Text = "Crear Orde De Trabajo";
             btnCrearOrden.UseVisualStyleBackColor = true;
+            btnCrearOrden.Click += btnCrearOrden_Click;
             // 
             // groupBox5
             // 
@@ -175,6 +177,7 @@
             btnEjecutarOrden.TabIndex = 5;
             btnEjecutarOrden.Text = "Ejecutar Orden De Trabajo";
             btnEjecutarOrden.UseVisualStyleBackColor = true;
+            btnEjecutarOrden.Click += btnEjecutarOrden_Click;
             // 
             // groupBox6
             // 
