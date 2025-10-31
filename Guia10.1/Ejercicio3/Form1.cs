@@ -37,10 +37,19 @@ namespace Ejercicio3
         {
             Movil coche = remiseria.AsignarCoche();
             if (coche == null)
+            {
                 MessageBox.Show("No hay pedidos, o coches disponibles", "No hay disponibilidad"); // aca puedo crearme una excepciones personalizadas para lanzar si es por falta de movil  o por falta de pedidos
-
+                return;
+            }
             lbxOcupado.Items.Add(coche);
             lbxDisponibles.Items.Remove(coche);
+        }
+
+        private void btnLiberarConche_Click(object sender, EventArgs e)
+        {
+            int numMovil = Convert.ToInt32(nupNumMovil.Value);
+            remiseria.LiberarVehiculo(numMovil);
+
         }
     }
 }

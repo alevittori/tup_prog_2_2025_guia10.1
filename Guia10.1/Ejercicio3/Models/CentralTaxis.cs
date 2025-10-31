@@ -57,9 +57,15 @@ namespace Ejercicio3.Models
 
         public void LiberarVehiculo(int numero)
         {
-            Movil movil = movilesOcupados.First(movilEnlista => movilEnlista.Numero == numero); // seleccionamos el movil de la lista  de moviles ocupado segun el numero de movil
+            Movil movil = null;
+            if (movilesOcupados.Count > 0)
+                 movil = movilesOcupados.First(movilEnlista => movilEnlista.Numero == numero); // seleccionamos el movil de la lista  de moviles ocupado segun el numero de movil
+            if(movil!= null)
+            {
             movilesDisponibles.Enqueue(movil); // retornamos a la cola de moviles disponibles
             movilesOcupados.Remove(movil);// lo borramos de la lista de moviels ocupados 
+
+            }
         }
     }
 }

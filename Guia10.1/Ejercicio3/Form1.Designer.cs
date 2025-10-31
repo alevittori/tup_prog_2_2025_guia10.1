@@ -216,6 +216,7 @@
             btnLiberarConche.TabIndex = 5;
             btnLiberarConche.Text = "Liberar Coche";
             btnLiberarConche.UseVisualStyleBackColor = true;
+            btnLiberarConche.Click += btnLiberarConche_Click;
             // 
             // label6
             // 
